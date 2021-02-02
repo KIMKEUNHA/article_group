@@ -7,7 +7,6 @@ set_num = 10#주제 하나에 대한 기사 최대 갯수지정
 # 헤드라인 링크를 받아와 links 리스트에 담는다.
 for num in part:
     get_headline(num,links)
-
 print(str(len(links)) + "개의 링크 추출 완료")
 sart = sarticle(links[0])
 set_list(sart)
