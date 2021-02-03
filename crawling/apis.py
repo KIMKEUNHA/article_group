@@ -48,7 +48,7 @@ def set_sum(sart):
     for link in sart.li_link:
         options = webdriver.ChromeOptions()
         options.add_experimental_option('excludeSwitches', ['enable-logging'])
-        driver = webdriver.Chrome(options=options, executable_path="chromedriver")
+        driver = webdriver.Chrome(options=options, executable_path="./chromedriver")
         driver.get(link)
         try:
             driver.find_element_by_xpath('//a[@class="media_end_head_autosummary_button _toggle_btn nclicks(sum_summary)"]').click()
