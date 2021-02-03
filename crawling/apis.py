@@ -81,3 +81,16 @@ def print_sarticle(sarticles):
         opfile["document"].append(ob)
     with open(path,"w") as output:
         json.dump(opfile,output,ensure_ascii=False,indent=4)
+
+def test_print_sarticle(sart):
+    path = time.strftime('./%y%m%d_%Hh_news.json')
+    opfile = {}
+    opfile["time"] = time.strftime('%y-%m-%d %H:%M:%S')
+    opfile["document"] = []
+    ob = {}
+    ob["head"] = sart.headline
+    ob["body"] = sart.li_body
+    ob["extract"] = sart.li_sum
+    opfile["document"].append(ob)
+    with open(path,"w") as output:
+        json.dump(opfile,output,ensure_ascii=False,indent=4)
