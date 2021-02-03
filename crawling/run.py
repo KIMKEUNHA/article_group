@@ -10,6 +10,7 @@ for num in part:
 
 print(str(len(links)) + "개의 링크 추출 완료")
 # 헤드라인 링크로 묶음기사 객체 초기화 및 생성
+idx = 0
 for link in links:
     sarticles.append(sarticle(link))
 
@@ -18,5 +19,7 @@ print(str(len(sarticles)) + "개의 헤드라인 기사 등록 완료")
 for sarticle in sarticles:
     set_list(sarticle)
     set_body(sarticle)
+    set_sum(sarticle)
+print_sarticle(sarticles)
 
 
