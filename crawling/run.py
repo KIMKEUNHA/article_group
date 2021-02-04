@@ -16,10 +16,13 @@ for link in links:
 
 # 각 객체에 있는 헤드라인 링크에서 뉴스 리스트 초기화
 print(str(len(sarticles)) + "개의 헤드라인 기사 등록 완료")
+idx = 0
 for sarticle in sarticles:
     set_list(sarticle)
     set_body(sarticle)
     set_sum(sarticle)
+    idx +=1
+    print(str(idx)+"/"+str(len(sarticles))+"개의 기사 완료")
 print_sarticle(sarticles)
 
 

@@ -50,7 +50,7 @@ def set_sum(sart):
     for link in sart.li_link:
         options = webdriver.ChromeOptions()
         options.add_experimental_option('excludeSwitches', ['enable-logging'])
-        driver = webdriver.Chrome(options=options, executable_path="./chromedriver")
+        driver = webdriver.Chrome(options=options, executable_path="/home/seungho/woongjin/kim/article_group/crawling/chromedriver")
         driver.get(link)
         try:
             driver.find_element_by_xpath('//a[@class="media_end_head_autosummary_button _toggle_btn nclicks(sum_summary)"]').click()
@@ -58,7 +58,7 @@ def set_sum(sart):
             sum = driver.find_element_by_xpath('//div[@class="_contents_body"]')
             sart.li_sum.append(clean_sum(sum.text))
             sart.li_sflag+=1
-            print("요약가져오기 성공")
+            print(str(sart.li_sflag)+"/3 요약가져오기 성공")
             if sart.li_sflag>=3:
                 break
         except:
@@ -71,7 +71,7 @@ def clean_sum(text):
     return result
 #jsonfile로 출력
 def print_sarticle(sarticles):
-    path = time.strftime('data_news/%y%m%d_%Hh_news.json')
+    path = time.strftime('/home/seungho/woongjin/kim/article_group/crawling/data_news/%y%m%d_%H:%Mnews.json')
     opfile = {}
     opfile["time"] = time.strftime('%y-%m-%d %H:%M:%S')
     opfile["document"] = []
@@ -85,7 +85,7 @@ def print_sarticle(sarticles):
         json.dump(opfile,output,ensure_ascii=False,indent=4)
 
 def test_print_sarticle(sart):
-    path = time.strftime('./%y%m%d_%Hh_news.json')
+    path = time.strftime('/home/seungho/woongjin/kim/article_group/crawling/data_news/%y%m%d_%H:%M_news_test.json')
     opfile = {}
     opfile["time"] = time.strftime('%y-%m-%d %H:%M:%S')
     opfile["document"] = []
