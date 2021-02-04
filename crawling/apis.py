@@ -69,7 +69,7 @@ def clean_sum(text):
     return result
 #jsonfile로 출력
 def print_sarticle(sarticles):
-    path = time.strftime('./%y%m%d_%Hh_news.json')
+    path = time.strftime('data_news/%y%m%d_%Hh_news.json')
     opfile = {}
     opfile["time"] = time.strftime('%y-%m-%d %H:%M:%S')
     opfile["document"] = []
