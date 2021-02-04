@@ -67,7 +67,7 @@ def set_sum(sart):
 #요약 가공
 def clean_sum(text):
     result = ""
-    result = text.replace("\n\n","")
+    result = text.replace("\n\n"," ")
     return result
 #jsonfile로 출력
 def print_sarticle(sarticles):
