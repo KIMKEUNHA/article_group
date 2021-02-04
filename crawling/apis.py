@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 import time
 import json
-
+from pyvirtualdisplay import Display
 # 네이버 헤드라인에 있는 링크들을 가져오는 기능구현 가져온 링크를 리스트에 append함
 def get_headline(num,link):
     url_format = 'https://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1='+num
@@ -45,6 +45,8 @@ def clean_body(body):
     return result
 # 각 링크에 접속하여 요약가져옴
 def set_sum(sart):
+    display = Display(visible=0, size=(1920, 1080))
+    display.start()
     for link in sart.li_link:
         options = webdriver.ChromeOptions()
         options.add_experimental_option('excludeSwitches', ['enable-logging'])
